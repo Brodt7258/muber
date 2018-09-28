@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const routes = require('./routes/routes');
 
 mongoose.Promise = global.Promise;
+mongoose.set('useFindAndModify', false);
+
 if (process.env.NODE_ENV !== 'test') {
     mongoose.connect('mongodb://localhost/muber', { useNewUrlParser: true });
 }
